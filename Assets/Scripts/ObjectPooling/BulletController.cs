@@ -18,10 +18,6 @@ public class BulletController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        if (_rb == null)
-        {
-            Debug.Log("Hüloğğ RigidBody2D yok, yok!");
-        }
     }
 
     private void Start()

@@ -9,7 +9,7 @@ public abstract class PlayerWeapons : MonoBehaviour
 
     protected float _lastFireTime;
 
-    public virtual void TryShoot()
+    public void TryShoot()
     {
         if (Time.time < _lastFireTime + _fireRate)
             return;
@@ -18,5 +18,5 @@ public abstract class PlayerWeapons : MonoBehaviour
         Shoot();
     }
 
-    public abstract void Shoot();
+    protected abstract void Shoot();
 }
