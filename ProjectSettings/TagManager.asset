@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Enemy
   - Mermi
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

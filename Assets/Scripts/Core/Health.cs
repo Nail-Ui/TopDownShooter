@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private int _maxHealth = 1;
     private int _currentHealth;
 
     private void Awake()
@@ -10,12 +10,7 @@ public class Health : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    private void Start()
-    {
-        
-    }
-
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         _currentHealth -= _maxHealth;
 
@@ -28,6 +23,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name} You are dead!");
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        // gameObject.SetActive(false);
     }
 }

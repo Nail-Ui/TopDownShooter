@@ -79,12 +79,15 @@ public class BulletController : MonoBehaviour
     }
 
     //Çarpışma sırasında ne olacağına karar veriyoruz (Düşmana çarparsa, duvara çarparsa vs.)
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+
+        if (damageable != null)
         {
             //Düşmana hasar ver, vs.
             Debug.Log("Bullet registered");
+            damageable.TakeDamage(1);
         }
 
         //Her çarpışmada queue'ya geri döner
