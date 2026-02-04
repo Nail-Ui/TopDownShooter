@@ -8,7 +8,7 @@ public class EnemyDamage : MonoBehaviour
     {
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
 
-        if(damageable != null)
+        if(damageable != null && collision.gameObject.CompareTag("Player"))
         {
             damageable.TakeDamage(damage);
         }
